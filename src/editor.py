@@ -40,13 +40,24 @@ def run_editor(filename):
     global SCREEN
     SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
     while True:
-        SCREEN.fill((255, 255, 255))
+        draw(SCREEN)
         resolve_input()
         pygame.display.update()
 
 
 def update_level_view():
-    tk.draw_token(DRAW_ZONES["level view"], name, )
+    DRAW_ZONES["level view"].fill((180, 180, 180))
+    for token in TILES:
+        for position in TILES[token]:
+            x, y = position
+            x -= CX * PW
+            Y -= CY * PW
+            tk.draw_token(DRAW_ZONES["level view"], token, (x*PW, y*PW))
+    # draw cursor
+    x = WIDTH / 2
+    y = HEIGHT / 2
+    pygame.draw.line(DRAW_ZONES["level view"], (255, 0, 0), (x, y), (x+PW, y+PW), width=2)
+    pygame.draw.line(DRAW_ZONES["level view"], (255, 0, 0), (x, y+PW), (x+PW, y), width=2)
 
 
 def draw(dest):
