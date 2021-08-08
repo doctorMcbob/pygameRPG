@@ -14,7 +14,20 @@ im thinking there will be one menu scoped at a time, with keys < > to switch sco
 
 each menu will have a resolve inputs function and state dictionary
 
-they will each all be drawn seperately and stored as Surfaces to be drawn to screen seperately 
+they will each all be drawn seperately and stored as Surfaces to be drawn to screen seperately
+
+wow okay a lot of progress coming here, loading and saving are done, we have a log, and the
+  tile menu is coming along nicely, still needs work on the UI but functionally were almost there
+
+TILE MENU TO DO
+===============
+ []  GUI should highlight depth options
+?[]  Show on level view?
+ []  key map blacklist (no overriding special keys)
+
+on the note of special keys, make a sort of cheat sheet help menu for the log maybe
+
+still some crashes i think but were getting closer!
 """
 import pygame
 from pygame.locals import *
